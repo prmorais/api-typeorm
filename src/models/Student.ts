@@ -6,6 +6,13 @@ import {Course} from "./Course";
 @Entity()
 export class Student {
 
+  constructor(name: string, courses: Course[], key: number, email: string ) {
+    this.name = name;
+    this.courses = courses;
+    this.key = key;
+    this.email = email;
+  }
+
   @PrimaryGeneratedColumn("increment")
   id: number;
 

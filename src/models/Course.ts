@@ -8,6 +8,8 @@ import {
   PrimaryGeneratedColumn,
   UpdateDateColumn
 } from "typeorm";
+import {IsNotEmpty} from "class-validator";
+
 import {Lesson} from "./Lesson";
 import {Student} from "./Student";
 
@@ -17,11 +19,12 @@ export class Course {
   @PrimaryGeneratedColumn("increment")
   id: number;
 
+  @IsNotEmpty({message: "O Nome deve ser informado."})
   @Column({ length: 100, unique: true })
   name: string;
 
-  @OneToMany(() => Lesson, lesson => lesson.course)
-  lessons: Lesson;
+  @OneToMany(() => Lesson, lessons => lessons.course)
+  lessons: Lesson[];
 
   @ManyToMany(() => Student, student => student.courses)
   @JoinTable({name: 'course_student',

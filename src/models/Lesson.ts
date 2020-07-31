@@ -23,7 +23,7 @@ export class Lesson {
   @OneToOne(() => Content, content => content.lesson)
   content: Content;
 
-  @ManyToOne(() => Course, courses => courses.lessons)
+  @ManyToOne(() => Course, course => course.lessons)
   @JoinColumn({ name: 'course_id'})
   course: Course;
 
