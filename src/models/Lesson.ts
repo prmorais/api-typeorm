@@ -24,8 +24,8 @@ export class Lesson {
   content: Content;
 
   @ManyToOne(() => Course, courses => courses.lessons)
-  @JoinColumn({ name: 'classe_id'})
-  classe: Course;
+  @JoinColumn({ name: 'course_id'})
+  course: Course;
 
   @CreateDateColumn()
   createdAt: Date;

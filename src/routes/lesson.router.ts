@@ -17,7 +17,7 @@ lessonRouter.post('/', async (req, res) => {
 
 lessonRouter.get('/', async (req, res) => {
   const lessons = await getRepository(Lesson).find({
-    relations: ['classe']
+    relations: ['course']
   });
   return res.status(200).json(lessons);
 });
