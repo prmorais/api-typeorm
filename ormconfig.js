@@ -5,11 +5,9 @@ module.exports = {
   "url": process.env.JAWSDB_MARIA_URL,
   "entities": [
     "dist/models/**/*.js"
-    // "src/models/**/*.ts"
   ],
   "migrations": [
     "dist/database/migrations/**/*.js"
-    // "src/database/migrations/**/*.ts"
   ],
   "cli":{
     "migrationsDir": [
