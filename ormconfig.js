@@ -4,10 +4,12 @@ module.exports = {
   "type": "mysql",
   "url": process.env.JAWSDB_MARIA_URL,
   "entities": [
-    "dist/models/**/*.js"
+    process.env.ENTITIES
+    // "dist/models/**/*.js"
   ],
   "migrations": [
-    "dist/database/migrations/**/*.js"
+    process.env.MIGRATIONS
+    // "dist/database/migrations/**/*.js"
   ],
   "cli":{
     "migrationsDir": [
