@@ -20,7 +20,7 @@ export class Course {
   @Column({ length: 100, unique: true })
   name: string;
 
-  @OneToMany(() => Lesson, lesson => lesson.classe)
+  @OneToMany(() => Lesson, lesson => lesson.course)
   lessons: Lesson;
 
   @ManyToMany(() => Student, student => student.courses)
